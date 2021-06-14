@@ -19,10 +19,16 @@ pipeline {
         stage('run-parallel-branches') {
             steps {
                 parallel(
-                    a: {
+                    firstTask: {
                         echo 'This is branch a'
                     },
-                    b: {
+                    secondTask: {
+                        echo 'This is branch b'
+                    },
+                    thirdTask: {
+                        echo 'This is branch b'
+                    },
+                    lastTask: {
                         echo 'This is branch b'
                     }
                 )
